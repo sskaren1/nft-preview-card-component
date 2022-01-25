@@ -1,0 +1,166 @@
+/* global variables */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+:root{
+    /* Primary */
+    --softBlue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+
+    /* Neutral */
+    --veryDarkBlueMainBG: hsl(217, 54%, 11%);
+    --veryDarkBlueCardBG: hsl(216, 50%, 16%);
+    --veryDarkBlueline: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+
+    --mobile: 375px;
+    --desktop: 1440px;
+}
+html{
+    font-size:62.5%;/* 1REM = 10px */
+    box-sizing: border-box;
+}
+*,*:before, *:after {
+    box-sizing: inherit;
+    margin:0;
+    padding:0;
+}
+body{
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.6rem;
+    background-color: var(--veryDarkBlueMainBG);
+}
+img{
+    max-width:100%;
+    display: block;
+    height: auto;
+}
+h1{
+    color: var(--white);
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+p{
+    color:var(--softBlue);
+    font-weight: 300;
+    text-align: justify;
+    line-height: 2.2rem;
+}
+a{
+    text-decoration: none;
+    -webkit-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all .4s ease;
+}
+
+/* card */
+.card-global{
+    background-color: var(--veryDarkBlueCardBG);
+    width: 30rem;
+    margin: 15rem auto 5rem;    
+    border-radius: 1rem;
+    /* box-shadow: inset offset-x offset-x blur-radius spread-radius color */
+    box-shadow: 0rem 0rem 5rem 1.5rem hsl(219, 48%, 8%);
+}
+@media (min-width:800px){
+    .card-global{
+        width: 35rem;
+        margin: 15rem auto 5rem;   
+    }
+}
+.card{
+    padding: 2rem;
+    width: auto;
+    height: 100%;
+}
+.card-image{
+    position:relative;
+}
+.card-image__image{
+    border-radius: 1rem;
+}    
+.card-image__overlay{
+    background-color: rgba(0, 255, 247, 0.5);
+    border-radius: 1rem;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all .4s ease;
+    
+}  
+.card-image__overlay:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+.card-image__overlay > img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}   
+.card-content__tittle  a{
+    padding: 2rem 0;
+    color:var(--white);
+}
+.card-content__tittle  a:hover{
+    color: var(--cyan);
+    cursor: pointer;
+}
+.card-content > p{
+    padding: 0 0 2rem;
+}
+
+.card-content__info,.info--price,.info--time{
+    display: flex;
+    flex-direction: row;
+}
+.card-content__info{
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+    border-bottom: 0.1rem solid var(--veryDarkBlueline);
+    margin-bottom: 1.5rem;
+}
+.price__img, .time__img{
+    height: 1.8rem;
+    padding-right: 0.5rem;
+}
+.price__p{
+    color:var(--cyan);
+    font-weight: 400;
+}
+.time__p{
+    color:var(--softBlue);
+    font-weight: 400;
+}
+/*Avatar*/
+.author__img, .author__p{
+    display: inline-block;
+}
+.author__img{
+    width: 4rem;
+    vertical-align: middle;
+    padding-right: 1rem;
+}
+.author__p{
+    text-align: left;
+    vertical-align: middle;
+}
+.author__p a{
+    color:var(--white);
+}
+.author__p a:hover{
+    color: var(--cyan);
+    cursor: pointer;
+}
+/*Attribution*/
+.attribution{
+    width: 30rem;
+    margin: 0 auto;
+}
+.attribution p{
+    text-align: center;
+    font-size: 1.4rem;
+}
